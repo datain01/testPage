@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maruki & Shizune's Lab</title>
+    <style>
+        :root {
+            --maruki-color: #E8D099; /* 마루키의 따뜻한 골드 */
+            --shizune-color: #F4C2C2; /* 시즈네의 차분한 널스 핑크 */
+            --bg-color: #FDFBF7;
+            --text-color: #4A4A4A;
+            --white: #FFFFFF;
+        }
+
+        body {
+            font-family: 'Gowun Dodum', sans-serif; /* 부드러운 돋움체 느낌 */
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+
+        /* 헤더 섹션 */
+        header {
+            background: linear-gradient(135deg, var(--maruki-color), var(--shizune-color));
+            padding: 60px 20px;
+            text-align: center;
+            color: var(--white);
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            text-shadow: 1px 1px 4px rgba(0,0,0,0.2);
+        }
+
+        header p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+
+        /* 네비게이션 */
+        nav {
+            background: var(--white);
+            display: flex;
+            justify-content: center;
+            padding: 15px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--text-color);
+            margin: 0 20px;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: #D4AF37;
+        }
+
+        /* 메인 컨텐츠 */
+        .container {
+            max-width: 1000px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        /* 프로필 카드 섹션 */
+        .profile-section {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            margin-bottom: 60px;
+            flex-wrap: wrap;
+        }
+
+        .card {
+            background: var(--white);
+            width: 300px;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+            text-align: center;
+            transition: transform 0.3s;
+            border: 1px solid rgba(0,0,0,0.02);
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+        }
+
+        .card-header {
+            height: 100px;
+        }
+
+        .maruki-header { background-color: var(--maruki-color); }
+        .shizune-header { background-color: var(--shizune-color); }
+
+        .avatar {
+            width: 100px;
+            height: 100px;
+            background-color: #fff;
+            border-radius: 50%;
+            margin: -50px auto 10px;
+            border: 4px solid var(--white);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+        }
+
+        .card-body {
+            padding: 20px;
+        }
+
+        .card-body h3 { margin: 10px 0 5px; }
+        .role { color: #888; font-size: 0.9rem; margin-bottom: 15px; display: block;}
+        
+        /* 게시판/블로그 섹션 */
+        .blog-section {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+        }
+
+        .post {
+            background: var(--white);
+            padding: 25px;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.03);
+            border-left: 5px solid;
+        }
+
+        .post.maruki { border-left-color: var(--maruki-color); }
+        .post.shizune { border-left-color: var(--shizune-color); }
+
+        .post h4 { margin-top: 0; }
+        .date { font-size: 0.8rem; color: #aaa; }
+
+        /* 푸터 */
+        footer {
+            text-align: center;
+            padding: 40px;
+            color: #888;
+            font-size: 0.9rem;
+            margin-top: 50px;
+            border-top: 1px solid #eee;
+        }
+
+        /* 반응형 */
+        @media (max-width: 768px) {
+            .blog-section { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Mind & Body Lab</h1>
+        <p>마루키 타쿠토 & 시즈네의 소소한 연구 일지</p>
+    </header>
+
+    <nav>
+        <a href="#">HOME</a>
+        <a href="#">PROFILE</a>
+        <a href="#">DIARY</a>
+        <a href="#">GUESTBOOK</a>
+    </nav>
+
+    <div class="container">
+        
+        <div style="text-align: center; margin-bottom: 50px;">
+            <h2>"당신의 마음과 몸, 모두 안녕하신가요?"</h2>
+            <p>달콤한 간식과 따뜻한 상담이 있는 곳.<br>
+            이곳은 인지과학 연구자 마루키와, 미래의 보건교사 시즈네가 함께 만들어가는 공간입니다.</p>
+        </div>
+
+        <div class="profile-section">
+            <div class="card">
+                <div class="card-header maruki-header"></div>
+                <div class="avatar">🍪</div>
+                <div class="card-body">
+                    <h3>마루키 타쿠토</h3>
+                    <span class="role">슈진 고교 스쿨 카운슬러 / 인지과학 연구자</span>
+                    <p>"무리해서 억누를 필요 없어요. 여기 맛있는 쿠키가 있는데, 좀 드시겠어요?"</p>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header shizune-header"></div>
+                <div class="avatar">🩺</div>
+                <div class="card-body">
+                    <h3>시즈네</h3>
+                    <span class="role">간호대학생 / 예비 보건교사</span>
+                    <p>"아픈 건 참지 말고 말해줘요. 마음의 상처도, 몸의 상처도 제가 돌봐드릴게요."</p>
+                </div>
+            </div>
+        </div>
+
+        <h3 style="text-align: center; margin-bottom: 30px;">Latest Updates</h3>
+        <div class="blog-section">
+            <div class="post maruki">
+                <h4>[연구 메모] 행복에 관하여</h4>
+                <span class="date">20XX.05.12 | Writer: Maruki</span>
+                <p>사람들이 진정으로 원하는 현실은 무엇일까? 오늘 상담에서 꽤 흥미로운 데이터를 얻었다. 그나저나 시즈네 양이 챙겨준 비타민 먹는 걸 또 깜빡했다...</p>
+            </div>
+            <div class="post shizune">
+                <h4>[건강 팁] 환절기 감기 조심하세요!</h4>
+                <span class="date">20XX.05.13 | Writer: Shizune</span>
+                <p>요즘 일교차가 커서 양호실...이 아니라, 병원에 오는 분들이 많아요. 선생님도 연구실에서 주무시지 말고 따뜻하게 입으셔야 할 텐데 걱정이네요.</p>
+            </div>
+        </div>
+
+    </div>
+
+    <footer>
+        <p>© Maruki & Shizune. All rights reserved.<br>
+        Designed with Love & Cognitive Psience.</p>
+    </footer>
+
+</body>
+</html>
